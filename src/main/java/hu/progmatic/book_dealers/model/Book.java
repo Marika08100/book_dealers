@@ -1,8 +1,8 @@
 package hu.progmatic.book_dealers.model;
 
 public class Book {
-    String author;
-    String title;
+    public String author;
+    public String title;
 
     public Book() {
     }

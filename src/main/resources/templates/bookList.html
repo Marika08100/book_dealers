@@ -6,6 +6,10 @@
 </head>
 <body>
 <h1>Books List</h1>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
 <table>
     <tr>
         <th>Title</th>
@@ -16,6 +20,7 @@
         <td th:text="${book.author}">Author</td>
     </tr>
 </table>
-<a href="@{}">Go back To Home Page</a>
+<a th:href="@{/home}">Go back To Home Page</a>
+<a th:href="@{/addBook}">Add a New Book</a>
 </body>
 </html>

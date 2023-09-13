@@ -35,12 +35,12 @@ public class PageController {
         model.addAttribute("books", bookService.printBooks());
         return "bookList";
     }
-    @GetMapping("/add-book")
+    @GetMapping("/addBook")
     public String showAddBookForm(Model model) {
         model.addAttribute("newBook", new Book());
         return "addBook";
     }
-    @PostMapping("/add-book")
+    @PostMapping("/addBook")
     public String addBook(@ModelAttribute("newBook") Book newBook) {
         bookService.addBook(newBook);
         return "redirect:/books";
