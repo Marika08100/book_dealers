@@ -1,11 +1,8 @@
-package hu.progmatic.book_dealers;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import service.BookService;
+import hu.progmatic.book_dealers.service.BookService;
 
 @Controller
 
@@ -16,6 +13,7 @@ public class PageController {
     public PageController(BookService bookService) {
         this.bookService = bookService;
     }
+
     @GetMapping("/home")
     public String home() {
         return "home";
@@ -25,5 +23,11 @@ public class PageController {
     public String about() {
         return "about";
 
+    }
+
+    @GetMapping("/books")
+    public String listBooks(Model model) {
+        model.addAttribute("books", bookService.printBooks());
+        return "bookList";
     }
 }

@@ -1,4 +1,4 @@
-package model;
+package hu.progmatic.book_dealers.model;
 
 public class Book {
     String author;

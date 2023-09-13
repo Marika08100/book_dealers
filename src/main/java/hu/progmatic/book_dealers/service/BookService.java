@@ -1,6 +1,6 @@
-package service;
+package hu.progmatic.book_dealers.service;
 
-import model.Book;
+import hu.progmatic.book_dealers.model.Book;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
