@@ -16,28 +16,34 @@ import java.util.List;
 @Controller
 public class UserController {
     private final UserService userService;
+
     @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    @GetMapping("/user")
+
+    @GetMapping("/users")
     public String listUsers(Model model) {
-        model.addAttribute("users", userService.getAllUser());
+        model.addAttribute("users", userService.getAllUsers());
         return "userList";
     }
+
     @GetMapping("/addUser")
     public String showAddUser(Model model) {
         model.addAttribute("newUser", new User());
         return "addUser";
     }
+
     @PostMapping("/addUser")
     public String addUser(@ModelAttribute("addUser") User newUser) {
-        userService.adduser(newUser);
+        userService.addUser(newUser);
         return "redirect:/users";
     }
+
     @GetMapping("/randomUser")
     public String getRandomUser(Model model) {
         model.addAttribute("randomUser", userService.getRandomUser());
         return "randomUser";
     }
+
 }

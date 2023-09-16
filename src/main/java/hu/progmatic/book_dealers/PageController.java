@@ -1,6 +1,7 @@
 package hu.progmatic.book_dealers;
 
 import hu.progmatic.book_dealers.model.Book;
+import hu.progmatic.book_dealers.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,7 +46,7 @@ public class PageController {
         bookService.addBook(newBook);
         return "redirect:/books";
     }
-    @GetMapping("/random-book")
+    @GetMapping("/randomBook")
     public String getRandomBook(Model model) {
         model.addAttribute("randomBook", bookService.getRandomBook());
         return "randomBook";
