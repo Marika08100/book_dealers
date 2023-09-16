@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+</head>
+<body>
+<h1>Add a new user</h1>
+<p>
+    Please provide the name and the email of the user you would like to add.
+</p>
+<form th:action="@{/addUser}" method="post" th:object="${newUser}">
+    <label for="name">Title:</label>
+    <input type="text" id="name" name="name">
+    <label for="email">Author:</label>
+    <input type="text" id="email" name="email">
+    <input type="submit" value="Add user">
+</form>
+<a th:href="@{/users}">Back to User List</a>
+</body>
+</html>

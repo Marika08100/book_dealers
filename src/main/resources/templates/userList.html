@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User List</title>
+</head>
+<body>
+<h1>User List</h1>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <tr th:each="user : ${users}">
+    <td th:text="${user.getUsername()}">Title</td>
+    <td th:text="${user.getEmail()}">Author</td>
+  </tr>
+</table>
+<a th:href="@{/home}">Go back To Home Page</a>
+<a th:href="@{/addUser}">Add a New User</a>
+</body>
+</html>
