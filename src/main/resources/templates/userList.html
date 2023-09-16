@@ -16,8 +16,8 @@
     <th>Email</th>
   </tr>
   <tr th:each="user : ${users}">
-    <td th:text="${user.getUsername()}">Title</td>
-    <td th:text="${user.getEmail()}">Author</td>
+    <td th:text="${user.getUsername()}">Name</td>
+    <td th:text="${user.getEmail()}">Email</td>
   </tr>
 </table>
 <a th:href="@{/home}">Go back To Home Page</a>
