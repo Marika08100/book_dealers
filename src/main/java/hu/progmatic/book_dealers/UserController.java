@@ -6,10 +6,7 @@ import hu.progmatic.book_dealers.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -44,6 +41,18 @@ public class UserController {
     public String getRandomUser(Model model) {
         model.addAttribute("randomUser", userService.getRandomUser());
         return "randomUser";
+    }
+
+    @GetMapping("userId")
+    public String getUserById(@PathVariable Long userId, Model model) {
+        User user = userService.getUserById(userId);
+    if(user != null){
+        model.addAttribute("user",user);
+        return "userDetails";
+    }else{
+        return "userNotFound";
+    }
+
     }
 
 }

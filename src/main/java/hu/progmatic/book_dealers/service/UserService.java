@@ -31,6 +31,14 @@ public class UserService {
     public void removeUser(User user) {
         users.remove(user);
     }
+    public User getUserById(Long userId) {
+        for (User user : users) {
+            if (user.getId().equals(userId)) {
+                return user;
+            }
+        }
+        return null;
+    }
 
     public User getRandomUser() {
         return users.get(randomGenerator.nextInt(users.size()));

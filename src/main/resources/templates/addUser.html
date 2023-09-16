@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Add User</title>
+    <link rel="stylesheet" href="/header.css">
 </head>
 <body>
-<h1>Add a new user</h1>
-<p>
-    Please provide the name and the email of the user you would like to add.
-</p>
+<div class="addUser">
+    <h2>add</h2>
 <form th:action="@{/addUser}" method="post" th:object="${newUser}">
-    <label for="name">Title:</label>
+    <label for="name">Email:</label>
     <input type="text" id="name" name="name">
-    <label for="email">Author:</label>
+    <label for="email">Name:</label>
     <input type="text" id="email" name="email">
     <input type="submit" value="Add user">
 </form>
 <a th:href="@{/users}">Back to User List</a>
+</div>
 </body>
 </html>

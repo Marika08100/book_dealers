@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Book</title>
+    <link rel="stylesheet" href="/header.css">
 </head>
 <body>
-<h1>Add a new book</h1>
-<p>
-    Please provide the title and the author of the book you would like to add.
-</p>
-<form th:action="@{/addBook}" method="post" th:object="${newBook}">
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title">
-    <label for="author">Author:</label>
-    <input type="text" id="author" name="author">
-    <input type="submit" value="Add book">
-</form>
-<a th:href="@{/books}">Back to Book List</a>
+<div class="addBook">
+    <h2>add</h2>
+    <form th:action="@{/addBook}" method="post" th:object="${newBook}">
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author">
+        <label for="title">Name:</label>
+        <input type="text" id="title" name="title">
+        <input type="submit" value="Add book">
+    </form>
+    <a th:href="@{/bookList}">Back to Book List</a>
+</div>
 </body>
 </html>
