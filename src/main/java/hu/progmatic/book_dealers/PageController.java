@@ -32,7 +32,7 @@ public class PageController {
 
     @GetMapping("/books")
     public String listBooks(Model model) {
-        model.addAttribute("books", bookService.printBooks());
+        model.addAttribute("books", bookService.getAllBooks());
         return "bookList";
     }
     @GetMapping("/addBook")
@@ -44,5 +44,10 @@ public class PageController {
     public String addBook(@ModelAttribute("newBook") Book newBook) {
         bookService.addBook(newBook);
         return "redirect:/books";
+    }
+    @GetMapping("/random-book")
+    public String getRandomBook(Model model) {
+        model.addAttribute("randomBook", bookService.getRandomBook());
+        return "randomBook";
     }
 }
